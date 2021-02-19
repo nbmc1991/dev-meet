@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "me and norma's final project",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,17 +12,17 @@
     "type": "git",
     "url": "git+https://github.com/DennyDaVjncj/dev-meet.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Denny D. and Norma C.",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DennyDaVjncj/dev-meet/issues"
   },
   "homepage": "https://github.com/DennyDaVjncj/dev-meet#readme",
   "dependencies": {
-    "axios": "^0.21.1",
     "express": "^4.17.1",
-    "if-env": "^1.0.4",
     "mongoose": "^5.11.17"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
