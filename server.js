@@ -1,17 +1,23 @@
-const xprss=require('express');
-const angrySquirl=require('mongoose');
-const dataLink=require('./dataLink');//for the server to conncect, this folder must contain an index file
-const app=xprss();
-const FREQUENCY=process.env.FREQUENCY||7777;
+const express = require('express');
 
-app.use(xprss.urlencoded({extended:true}));
-app.use(xprss.json());
-if(process.env.NODE_ENV==='production'){
-    app.use(xprss.static('client/build'))
-}
-app.use(dataLink);
+const routes = require('./routes');
 
-angrySquirl.connect(process.env.MONGODB_URI||'mongodb://localhost/dev-meet');
-app.listen(FREQUENCY,()=>{
-    console.log(`🌎  ==> API Server now listening on PORT ${FREQUENCY}!`)
-})
+
+//app config
+const app = express();
+const PORT  = process.env.PORT || 7777;
+
+//middleware
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+app.use('/',routes)
+//db config
+
+
+//api endpoint
+// app.get('/', (req, res) => res.status(200).send('Hello!!!'));
+
+
+//listener
+app.listen(PORT, () => console.log(`🌎  ==> http://localhost:${PORT}`));
