@@ -3,14 +3,14 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar'
 
-const useStyles=makeStyles((them)=>({
+const useStyles=makeStyles((theme)=>({
     root:{
         flexGrow:1,
     },
     paper:{
-        padding:ThemeProvider.spacing(2),
+        padding:theme.spacing(2),
         textAlign:'center',
-        color:ThemeProvider.palette.text.secondary,
+        color:theme.palette.text.secondary,
     },
 }));
 
