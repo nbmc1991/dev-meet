@@ -6,8 +6,8 @@ import PrimarySearchAppBar from './components/AppBar';
 function App() {
   return(
     <div>
-      <PrimarySearchAppBar/>
       <LandingPage/>
+      <PrimarySearchAppBar/>
     </div>
   );
 }
