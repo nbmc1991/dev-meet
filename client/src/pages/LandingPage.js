@@ -1,31 +1,15 @@
-import {makeStyles, ThemeProvider} from '@material-ui/core/styles';
+import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Avatar from '@material-ui/core/Avatar'
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 
-const useStyles=makeStyles((theme)=>({
-    root:{
-        flexGrow:1,
-    },
-    paper:{
-        padding:theme.spacing(2),
-        textAlign:'center',
-        color:theme.palette.text.secondary,
-    },
-}));
-
-export default function FullWidthGrid(){
-    const classes=useStyles();
-
+const LandingPage=()=>{
     return(
-        <div className={classes.root}>
-            <Grid container direction='row-reverse' justify='space-around' alignitems='baseline' spacing={3}>
-                <Grid item xs={12}>
-                    <Paper className={classes.paper}>
-                        <Avatar alt='Remy Sharp' src='/static/images/avatar/1.jpg' className={classes.large}/>
-                    </Paper>
-                </Grid>
-            </Grid>
-        </div>
+        <Paper elevation={3}>
+            <h3>da Vjncj dissonance...</h3>
+        </Paper>
     )
 }
+export default LandingPage;
