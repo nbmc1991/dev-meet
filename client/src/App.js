@@ -17,7 +17,8 @@ const App=()=>{
   return(
     <Router>
       <div className='App'>
-        <Route exact path='/' component={SimpleContainer}/>        
+        <Route exact path='/' component={SimpleContainer}/>
+        <SimpleContainer/>      
         <Switch>
           {/* <PrivateRoute exact path='profilepage' component={ProfilePage}/> */}
         </Switch>
