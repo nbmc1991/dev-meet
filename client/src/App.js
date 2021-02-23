@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import {Store} from './store';
 import Navbar from './components/partials/NavBar';
 import LandingPage from './components/pages/LandingPage'
+import HomePage from './components/pages/HomePage';
 
 const App=()=>{
   // const {dispatch}=useContext();//(store) should fill this spot
@@ -21,7 +22,7 @@ const App=()=>{
         <Navbar/>        
         <Route exact path='/' component={LandingPage}/>             
         <Switch>
-          {/* <PrivateRoute exact path='profilepage' component={ProfilePage}/> */}
+          <HomePage/>
         </Switch>
       </div>      
     </Router>
