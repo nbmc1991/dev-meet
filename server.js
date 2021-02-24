@@ -4,11 +4,12 @@ const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const routes = require('./routes')
 // Middleware packages
 const bodyParser = require('body-parser');
 // Routes
-const authRoutes = require('./routes/auth');
-const usersRoutes = require('./routes/users');
+// const authRoutes = require('./routes/auth');
+// const usersRoutes = require('./routes/users');
 
 const PORT = process.env.PORT || 3001;
 
@@ -17,6 +18,8 @@ const app = express();
 // Middleware packages
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use('/',routes)
 
 // Mongoose connection to MongoDB. (https://mongoosejs.com/docs/guide.html)
 mongoose.connect(
@@ -37,10 +40,10 @@ require('./config/passport')(passport);
 const requiresAuth = passport.authenticate('jwt', { session: false });
 
 // Login and register routes here don't require authenticated user.
-app.use('/api/auth', authRoutes);
+// app.use('/api/auth', authRoutes);
 
 // For all authenticated routes, make sure to use this
-app.use('/api/users', requiresAuth, usersRoutes);
+// app.use('/api/users', requiresAuth, usersRoutes);
 
 // For production, serve compiled React app in client build directory.
 if (process.env.NODE_ENV === 'production') {
