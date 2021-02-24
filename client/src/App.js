@@ -6,6 +6,7 @@ import LandingPage from './components/pages/LandingPage'
 import HomePage from './components/pages/HomePage';
 import Login from './components/pages/Login';
 // import iScan from './components/iScan/iScan'
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline'//should provide an extremely finished look & feel
 
 const App=()=>{
   // const {dispatch}=useContext();//(store) should fill this spot

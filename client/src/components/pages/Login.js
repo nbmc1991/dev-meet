@@ -28,14 +28,13 @@ const Login=props=>{
     //     loginUser(userData,props.history)(dispatch);
     // }
     return(
-        <Paper>
-            {/**my canvas for designing this page */}
-            <Container>
+        <Container>            
+            <Paper>
                 <Typography>
                     da Vjncj dissonance
                 </Typography>
-            </Container>
-        </Paper>
+            </Paper>
+        </Container>
     )
 }
 export default Login;
