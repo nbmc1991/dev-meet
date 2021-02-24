@@ -3,26 +3,27 @@ import {Link} from 'react-router-dom';
 // import {Store} from '../../store';
 // import {registerUser,SetErrors} from '../../store/actions/authActions';
 import classnames from 'classnames';
-import Container, { Typography } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import 'fontsource-roboto';
+import Paper from '@material-ui/core/Paper';
 
 const Register=props=>{
-    const {state,dispatch}=useContext(Store);
-    const errors=state.error;
+    // const {state,dispatch}=useContext(Store);
+    // const errors=state.error;
     const nameRef=useRef();
     const emailRef=useRef();
     const passwordRef=useRef();
     const password2Ref=useRef();
 
     useEffect(()=>{
-        if(state.auth.isAuthenticated)
-            props.history.push('/homepage');
-    },[state,props]);
+    //     if(state.auth.isAuthenticated)
+    //         props.history.push('/homepage');
+    },[])//},[state,props]);
 
     const onSubmit=ux=>{
         ux.preventDefault();
-        dispatch(setErrors({response:{data:{} }}));
+        // dispatch(setErrors({response:{data:{} }}));
 
         const userData={
             name:nameRef.current.value,
@@ -30,7 +31,7 @@ const Register=props=>{
             password:passwordRef.current.value,
             password2:password2Ref.current.value,
         };
-        registerUser(userData,props.history)(dispatch);
+        // registerUser(userData,props.history)(dispatch);
     }
     return(
         <Container>
