@@ -4,9 +4,10 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Navbar from './components/partials/NavBar';
 import LandingPage from './components/pages/LandingPage'
 import HomePage from './components/pages/HomePage';
+import Register from './components/pages/Register';
 import Login from './components/pages/Login';
-// import iScan from './components/iScan/iScan'
-import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline'//should provide an extremely finished look & feel
+import SecureScan from './components/authentication/SecureScan';
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';//should provide an extremely finished look & feel
 
 const App=()=>{
   // const {dispatch}=useContext();//(store) should fill this spot
@@ -25,8 +26,9 @@ const App=()=>{
         <Navbar/>        
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/login' component={Login}/>
+        <Route exact path='/register' component={Register}/>
         <Switch>
-          <Route exact path='/register' component={HomePage}/>
+          <SecureScan exact path='/hompage' component={HomePage}/>
         </Switch>
       </div>      
     </Router>
