@@ -8,7 +8,9 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 // Routes
 
-const routes = require('./routes')
+const authRoutes = require('./routes/auth');
+const usersRoutes = require('./routes/users');
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -36,20 +38,20 @@ mongoose.connect(
   //TODO: PASS DOWN REQUIRESAUTH MIDDLEWARE TO ROUTES 
   // Middleware to use when routes require authenticated user.
   const requiresAuth = passport.authenticate('jwt', { session: false });
-  app.use('/',routes);
+  // app.use('/',routes);
   
   // Login and register routes here don't require authenticated user.
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 
 // For all authenticated routes, make sure to use this
-// app.use('/api/users', requiresAuth, usersRoutes);
+app.use('/api/users', requiresAuth, usersRoutes);
 
 // For production, serve compiled React app in client build directory.
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static('client/public'));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'));
   });
 }
 
