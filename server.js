@@ -4,13 +4,11 @@ const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const routes = require('./routes')
 // Middleware packages
 const bodyParser = require('body-parser');
 // Routes
-// const authRoutes = require('./routes/auth');
-// const usersRoutes = require('./routes/users');
 
+const routes = require('./routes')
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -19,7 +17,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/',routes)
 
 // Mongoose connection to MongoDB. (https://mongoosejs.com/docs/guide.html)
 mongoose.connect(
@@ -28,18 +25,20 @@ mongoose.connect(
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
-)
-.then(() => console.log('MongoDB connected'))
-.catch((err) => console.log(err));
-
-// Passport JWT setup.
-app.use(passport.initialize());
-require('./config/passport')(passport);
-
-// Middleware to use when routes require authenticated user.
-const requiresAuth = passport.authenticate('jwt', { session: false });
-
-// Login and register routes here don't require authenticated user.
+  )
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.log(err));
+  
+  // Passport JWT setup.
+  app.use(passport.initialize());
+  require('./config/passport')(passport);
+  
+  //TODO: PASS DOWN REQUIRESAUTH MIDDLEWARE TO ROUTES 
+  // Middleware to use when routes require authenticated user.
+  const requiresAuth = passport.authenticate('jwt', { session: false });
+  app.use('/',routes);
+  
+  // Login and register routes here don't require authenticated user.
 // app.use('/api/auth', authRoutes);
 
 // For all authenticated routes, make sure to use this
