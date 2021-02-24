@@ -34,7 +34,9 @@ const Register=props=>{
     return(
         <Container>
             <Paper>
-                <Typography>da Vjncj Dissonance</Typography>
+                <Typography>
+                    da Vjncj Dissonance
+                </Typography>
             </Paper>
         </Container>
     )
