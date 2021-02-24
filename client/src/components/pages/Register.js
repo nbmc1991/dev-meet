@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 // import {Store} from '../../store';
 // import {registerUser,SetErrors} from '../../store/actions/authActions';
 import classnames from 'classnames';
+import Container from '@material-ui/core';
+import 
 
 const Register=props=>{
     const {state,dispatch}=useContext(Store);
@@ -30,6 +32,8 @@ const Register=props=>{
         registerUser(userData,props.history)(dispatch);
     }
     return(
-        
+        <Container>
+
+        </Container>
     )
 }
