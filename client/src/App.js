@@ -4,6 +4,8 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Navbar from './components/partials/NavBar';
 import LandingPage from './components/pages/LandingPage'
 import HomePage from './components/pages/HomePage';
+import Login from './components/pages/Login';
+// import iScan from './components/iScan/iScan'
 
 const App=()=>{
   // const {dispatch}=useContext();//(store) should fill this spot
@@ -20,9 +22,10 @@ const App=()=>{
     <Router>
       <div className='App'>
         <Navbar/>        
-        <Route exact path='/' component={LandingPage}/>             
+        <Route exact path='/' component={LandingPage}/>
+        <Route exact path='/login' component={Login}/>
         <Switch>
-          <HomePage/>
+          <Route exact path='/register' component={HomePage}/>
         </Switch>
       </div>      
     </Router>
