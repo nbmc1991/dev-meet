@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
 import { Component } from 'react';
 import {Rout,Redirect} from 'react-router-dom';
-import {Store} from '../../store';
+// import {Store} from '../../store';
 
 const iScan=({component:Component,...rest})=>{
     const {state}=useContext(Store);
