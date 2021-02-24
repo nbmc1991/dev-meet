@@ -7,6 +7,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import 'fontsource-roboto';
 import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
 
 const Register=props=>{
     // const {state,dispatch}=useContext(Store);
@@ -36,9 +37,7 @@ const Register=props=>{
     return(
         <Container>
             <Paper>
-                <Typography>
-                    pig feet
-                </Typography>
+                
             </Paper>
         </Container>
     )
