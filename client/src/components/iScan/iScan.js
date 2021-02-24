@@ -1,10 +1,12 @@
 import React,{useContext} from 'react';
 import { Component } from 'react';
-import {Rout,Redirect} from 'react-router-dom';
+import {Route,Redirect} from 'react-router-dom';
 // import {Store} from '../../store';
 
-const iScan=({component:Component,...rest})=>{
-    const {state}=useContext(Store);
-    return <Route {...rest} render={props=>state.auth.isAuthenticated===true ? (<Component{...props}/>):(<Redirect to='/hompage'/>)}/>
+const SecureScan=({component:Component,...rest})=>{
+    // const {state}=useContext();//fill useContext() with 'Store'
+    // return <Route {...rest} render={props=>state.auth.isAuthenticated===true ? (<Component{...props}/>):(<Redirect to='/hompage'/>)}/>
+    console.error('this is engineering');
+    console.log('alas, purposeful placement')
 }
-export default iScan;
+export default SecureScan;
