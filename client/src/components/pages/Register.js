@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 // import {registerUser,SetErrors} from '../../store/actions/authActions';
 import classnames from 'classnames';
 import Container, { Typography } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography';
+import 'fontsource-roboto';
 
 const Register=props=>{
     const {state,dispatch}=useContext(Store);
@@ -35,9 +36,10 @@ const Register=props=>{
         <Container>
             <Paper>
                 <Typography>
-                    da Vjncj Dissonance
+                    pig feet
                 </Typography>
             </Paper>
         </Container>
     )
 }
+export default Register;

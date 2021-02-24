@@ -31,7 +31,7 @@ const Login=props=>{
         <Container>            
             <Paper>
                 <Typography>
-                    da Vjncj dissonance
+                    muscular distrophy
                 </Typography>
             </Paper>
         </Container>
