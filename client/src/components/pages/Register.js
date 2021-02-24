@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 // import {Store} from '../../store';
 // import {registerUser,SetErrors} from '../../store/actions/authActions';
 import classnames from 'classnames';
-import Container from '@material-ui/core';
-import 
+import Container, { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography'
 
 const Register=props=>{
     const {state,dispatch}=useContext(Store);
@@ -33,7 +33,9 @@ const Register=props=>{
     }
     return(
         <Container>
-
+            <Paper>
+                <Typography>da Vjncj Dissonance</Typography>
+            </Paper>
         </Container>
     )
 }
