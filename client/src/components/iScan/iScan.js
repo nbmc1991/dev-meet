@@ -5,5 +5,6 @@ import {Store} from '../../store';
 
 const iScan=({component:Component,...rest})=>{
     const {state}=useContext(Store);
-    return <Route {...rest} render={props=>state.auth.isAuthenticated===true ? (<Component{...props}/>):(<Redirect to='/hompage')}
+    return <Route {...rest} render={props=>state.auth.isAuthenticated===true ? (<Component{...props}/>):(<Redirect to='/hompage'/>)}/>
 }
+export default iScan;
