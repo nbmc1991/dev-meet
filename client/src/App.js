@@ -5,6 +5,7 @@ import Navbar from './components/partials/NavBar';
 import LandingPage from './components/pages/LandingPage'
 import HomePage from './components/pages/HomePage';
 import Login from './components/pages/Login';
+import iScan from './components/iScan/iScan'
 
 const App=()=>{
   // const {dispatch}=useContext();//(store) should fill this spot
@@ -24,7 +25,7 @@ const App=()=>{
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/login' component={Login}/>
         <Switch>
-          <HomePage/>{/*investigate the PrivateRoute component|*/}
+          <Route exact path='/hompage' component={HomePage}/>
         </Switch>
       </div>      
     </Router>
