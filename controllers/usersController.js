@@ -1,8 +1,8 @@
-const models = require('../models/');
+const User = require('../models/user');
 
 module.exports = {
     findAll: function(req, res){
-        models.User.find(req.query)
+        User.find(req.query)
 
     }
 }
