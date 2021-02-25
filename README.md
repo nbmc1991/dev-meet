@@ -1,2 +1,2 @@
 # DevMeet.
-me and norma's final project
+A place for developer to create lasting relationships & stellar applications!
