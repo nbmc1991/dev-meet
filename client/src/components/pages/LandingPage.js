@@ -35,7 +35,7 @@ const LandingPage=props=>{
                     </p>
                     <br/>
                     <div className="col s6">
-                        <Link to="/register" className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
+                        <Link to="/ register" className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
                         width: '140px',
                         borderRadius: '3px',
                         letterSpacing: '1.5px',
