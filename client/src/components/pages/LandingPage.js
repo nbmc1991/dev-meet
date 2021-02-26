@@ -1,16 +1,9 @@
-import { Container, Typography } from '@material-ui/core';
+import {Container,Typography,Grid,Button,Paper,BottomNavigationAction,BottomNavigation} from '@material-ui/core';
+import {RestoreIcon,FavoriteIcon,LocationOn} from '@material-ui/icons';
 import React,{useContext} from 'react';
 // import {Store} from '../../store';//this will be filled with functions for capturing client data
 import {Link} from 'react-router-dom';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button'
 import 'fontsource-roboto';
-import Paper from '@material-ui/core/Paper';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 // import CssBaseline from '@material-ui/core/CssBaseline';
 // import Typography from '@material-ui/core/Typography';
@@ -34,51 +27,53 @@ const LandingPage=props=>{
     // console.log({state,props});
 
     return(
-        // <div className='container valign-wrapper' style={{height:'75vh'}}>
-        //     <div className='row'>
-        //         <div className='col s12 center-align'>
-        //             <h4>
-        //                 <b>Meet</b> the <b>Dev</b> of your dreams... 
-        //             </h4>
-        //             <p className='flow-text grey-text text-darken-1'>
-        //                 The perfect place for to build lasting connections + stellar applications
-        //             </p>
-        //             <br/>
-        //             <div className="col s6">
-        //                 <Link to="/register" className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
-        //                 width: '140px',
-        //                 borderRadius: '3px',
-        //                 letterSpacing: '1.5px',
-        //                 }}>
-        //                 Register
-        //                 </Link>
-        //             </div>
-        //             <div>
-        //                 <Link to="/login" className="btn btn-large btn-flat waves-effect white black-text" style={{
-        //                 width: '140px',
-        //                 borderRadius: '3px',
-        //                 letterSpacing: '1.5px',
-        //                 }}>
-        //                 Login
-        //                 </Link>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
-        <Container maxWidth='sm'>
-            <Grid item xs={12} spacing={3} justify='flex-start'>
-                <Paper elevation={3}>
-                    <Typography>
-                        da Vjncj dissonance
-                    </Typography>
-                </Paper>
-                <BottomNavigation value={3}
-                showLabels>
-                    <BottomNavigationAction label='Recents'icon={<RestoreIcon/>}/>
-                    <BottomNavigationAction label='Favorites'icon={<FavoriteIcon/>}/>{/**this link can lead to a store() that renders the users last 5 likes */}
-                </BottomNavigation>                
-            </Grid>
-        </Container>
+        <div className='container valign-wrapper' style={{height:'75vh'}}>
+            <div className='row'>
+                <div className='col s12 center-align'>
+                    <Paper>
+                        <Typography>
+                            <b>Meet</b> the <b>Dev</b> of your dreams...
+                        </Typography>                    
+                    </Paper>
+                    <p className='flow-text grey-text text-darken-1'>
+                        The perfect place for to build lasting connections + stellar applications
+                    </p>
+                    <br/>
+                    <div className="col s6">
+                        <Link to="/register" className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
+                        width: '140px',
+                        borderRadius: '3px',
+                        letterSpacing: '1.5px',
+                        }}>
+                        Register
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to="/login" className="btn btn-large btn-flat waves-effect white black-text" style={{
+                        width: '140px',
+                        borderRadius: '3px',
+                        letterSpacing: '1.5px',
+                        }}>
+                        Login
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
+        // <Container maxWidth='sm'>
+        //     <Grid item xs={12} spacing={3} justify='flex-start'>
+        //         <Paper elevation={3}>
+        //             <Typography>
+        //                 da Vjncj dissonance
+        //             </Typography>
+        //         </Paper>
+        //         <BottomNavigation value={3}
+        //         showLabels>
+        //             <BottomNavigationAction label='Recents'icon={<RestoreIcon/>}/>
+        //             <BottomNavigationAction label='Favorites'icon={<FavoriteIcon/>}/>{/**this link can lead to a store() that renders the users last 5 likes */}
+        //         </BottomNavigation>                
+        //     </Grid>
+        // </Container>
     )
 };
 export default LandingPage;
