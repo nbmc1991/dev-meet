@@ -2,7 +2,7 @@ import React,{useContext,useEffect} from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 // import {Store} from './store';
-import NavBar from './components/partials/NavBar';
+// import NavBar from './components/partials/NavBar';
 import LandingPage from './components/pages/LandingPage'
 import HomePage from './components/pages/HomePage';
 import Register from './components/pages/Register';
@@ -25,13 +25,13 @@ const App=()=>{
   return(
     <Router>
       <div className='App'>
-        <NavBar/>        
+        <PrimarySearchAppBar/>        
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/login' component={Login}/>
-        <Route exact path='/register' component={Register}/>
-        <Switch>
+        <Route exact path='/hompage' component={HomePage}/>
+        {/* <Switch>
           <SecureScan exact path='/hompage' component={HomePage}/>
-        </Switch>
+        </Switch> */}
       </div>      
     </Router>
   );

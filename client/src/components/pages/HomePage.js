@@ -59,6 +59,7 @@ const HomePage=props=>{
           I luv this shit
         </Paper>
       </Grid>
-    </Container>
+    </Container>      
+  )  
 }
 export default HomePage;
