@@ -30,11 +30,13 @@ const LandingPage=props=>{
         <div className='container valign-wrapper' style={{height:'75vh'}}>
             <div className='row'>
                 <div className='col s12 center-align'>
-                    <Paper>
-                        <Typography>
-                            <b>Meet</b> the <b>Dev</b> of your dreams...
-                        </Typography>                    
-                    </Paper>
+                    <Container maxWidth='sm'>
+                        <Paper>
+                            <Typography>
+                                <b>Meet</b> the <b>Dev</b> of your dreams...
+                            </Typography>
+                        </Paper>                                   
+                    </Container>
                     <p className='flow-text grey-text text-darken-1'>
                         The perfect place for to build lasting connections + stellar applications
                     </p>
@@ -49,13 +51,15 @@ const LandingPage=props=>{
                         </Link>
                     </div>
                     <div>
+                    {/* 
                         <Link to="/login" className="btn btn-large btn-flat waves-effect white black-text" style={{
                         width: '140px',
                         borderRadius: '3px',
                         letterSpacing: '1.5px',
                         }}>
                         Login
-                        </Link>
+                        </Link> */}
+                        <Link to='/login' variant='filled'>Login</Link>
                     </div>
                 </div>
             </div>
