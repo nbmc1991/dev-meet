@@ -5,6 +5,12 @@ import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button'
 import 'fontsource-roboto';
+import Paper from '@material-ui/core/Paper';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 // import CssBaseline from '@material-ui/core/CssBaseline';
 // import Typography from '@material-ui/core/Typography';
@@ -60,7 +66,18 @@ const LandingPage=props=>{
         //     </div>
         // </div>
         <Container maxWidth='sm'>
-            
+            <Grid item xs={12} spacing={3} justify='flex-start'>
+                <Paper elevation={3}>
+                    <Typography>
+                        da Vjncj dissonance
+                    </Typography>
+                </Paper>
+                <BottomNavigation value={3}
+                showLabels>
+                    <BottomNavigationAction label='Recents'icon={<RestoreIcon/>}/>
+                    <BottomNavigationAction label='Favorites'icon={<FavoriteIcon/>}/>{/**this link can lead to a store() that renders the users last 5 likes */}
+                </BottomNavigation>                
+            </Grid>
         </Container>
     )
 };
