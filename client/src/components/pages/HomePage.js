@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-// import Container from '@material-ui/core/Container';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper'
 //will need to import browser/user data
 //will import components for conditional rendering
 //will import from internal API
@@ -24,32 +26,39 @@ const HomePage=props=>{
     // };
 
     return(
-        <div className="container valign-wrapper" style={{ height: '75vh' }}>
-      <div className="row">
-        <div className="col s12 center-align">
-          <h4>
-            <b>Hey there,</b>{/* {user.name.split(' ')[0]} */}
-            <p className="flow-text grey-text text-darken-1">
-              HomePage wireframe:{' '} <span style={{ fontFamily: 'monospace' }}>🖼</span> a perfect picture...
-            </p>
-          </h4>
+    //     <div className="container valign-wrapper" style={{ height: '75vh' }}>
+    //   <div className="row">
+    //     <div className="col s12 center-align">
+    //       <h4>
+    //         <b>Hey there,</b>{/* {user.name.split(' ')[0]} */}
+    //         <p className="flow-text grey-text text-darken-1">
+    //           HomePage wireframe:{' '} <span style={{ fontFamily: 'monospace' }}>🖼</span> a perfect picture...
+    //         </p>
+    //       </h4>
 
-          <button
-            className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            style={
-              {
-                width: '150px',
-                borderRadius: '3px',
-                letterSpacing: '1.5px',
-                marginTop: '1rem',
-              }
-            }>
-            {/*onClick={onLogoutClick}*/}
-            Logout
-          </button>
-        </div>
-      </div>
-    </div>
-    )
+    //       <button
+    //         className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+    //         style={
+    //           {
+    //             width: '150px',
+    //             borderRadius: '3px',
+    //             letterSpacing: '1.5px',
+    //             marginTop: '1rem',
+    //           }
+    //         }>
+    //         {/*onClick={onLogoutClick}*/}
+    //         Logout
+    //       </button>
+    //     </div>
+    //   </div>
+    // </div>
+    // )
+    <Container>
+      <Grid display='row' justify='center' alignItems='center'>
+        <Paper>
+          I luv this shit
+        </Paper>
+      </Grid>
+    </Container>
 }
 export default HomePage;
