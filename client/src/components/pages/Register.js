@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import 'fontsource-roboto';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
+import PrimarySearchAppBar from '../partials/AppBar';
 
 const Register=props=>{
     // const {state,dispatch}=useContext(Store);

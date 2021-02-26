@@ -6,6 +6,8 @@ import classnames from 'classnames';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import { Typography } from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 const Login=props=>{
     // const {state,dispatch}=useContext(Store);
@@ -29,11 +31,9 @@ const Login=props=>{
     // }
     return(
         <Container>            
-            <Paper>
-                <Typography>
-                    muscular distrophy
-                </Typography>
-            </Paper>
+            <form className={classes.root} noValidate autoComplete='off'>
+                <TextField id="standard-secondary" label='Standard secondary' color='secondary'/>
+            </form>
         </Container>
     )
 }
