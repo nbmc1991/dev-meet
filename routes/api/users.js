@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const usersController = require('../../controllers/usersController');
+const { default: axios } = require('axios');
 
 //matched with '/api/users'
 // router
@@ -15,9 +16,16 @@ const usersController = require('../../controllers/usersController');
 
 
 router.get('/', (req, res) => {
-  // const { _id, name, email, date } = req.user;
-  // return res.json({ _id, name, email, date });
-  res.send('hello!!!')
+  axios({
+    method: 'get',
+    url: 'https://randomuser.me/api/?results=50&inc=name,email,dob,phone,picture,location',
+    responseType: 'json',
+  }).then(({data}) => {
+    console.log(data);
+    res.json(data)
+  }).catch(err => res.json(err))
 });
+
+
 
 module.exports = router;
