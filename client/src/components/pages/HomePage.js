@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper'
+import Button from '@material-ui/core/Button'
 //will need to import browser/user data
 //will import components for conditional rendering
 //will import from internal API
@@ -53,12 +54,14 @@ const HomePage=props=>{
     //   </div>
     // </div>
     // )
-    <Container>
-      <Grid display='row' justify='center' alignItems='center'>
-        <Paper>
-          I luv this shit
-        </Paper>
-      </Grid>
+    <Container maxWidth='sm'>      
+      <Paper>
+        I luv this shit
+        <br/>
+        <Button variant='outlined' >
+          'in the click of a bttn'
+        </Button>
+      </Paper>      
     </Container>      
   )  
 }

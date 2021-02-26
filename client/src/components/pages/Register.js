@@ -9,6 +9,7 @@ import 'fontsource-roboto';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import PrimarySearchAppBar from '../partials/AppBar';
+import 'fontsource-roboto';
 
 const Register=props=>{
     // const {state,dispatch}=useContext(Store);
@@ -36,9 +37,9 @@ const Register=props=>{
         // registerUser(userData,props.history)(dispatch);
     }
     return(
-        <Container>
-            <Paper>
-                
+        <Container maxWidth='sm'>
+            <Paper elevation={3}>
+                <Typography>da Vjncj dissonance</Typography>
             </Paper>
         </Container>
     )

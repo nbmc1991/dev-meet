@@ -3,6 +3,8 @@ import React,{useContext} from 'react';
 // import {Store} from '../../store';//this will be filled with functions for capturing client data
 import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button'
+import 'fontsource-roboto';
 
 // import CssBaseline from '@material-ui/core/CssBaseline';
 // import Typography from '@material-ui/core/Typography';
@@ -56,12 +58,9 @@ const LandingPage=props=>{
         //             </div>
         //         </div>
         //     </div>
-
         // </div>
-        <Container lg>
-            <Grid display='column' justify='flex-end' alignItems='center'>
-                <Typography>lemme see</Typography>
-            </Grid>
+        <Container maxWidth='sm'>
+            
         </Container>
     )
 };

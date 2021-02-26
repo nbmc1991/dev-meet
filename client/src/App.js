@@ -2,14 +2,12 @@ import React,{useContext,useEffect} from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 // import {Store} from './store';
-// import NavBar from './components/partials/NavBar';
+import NavBar from './components/partials/NavBar';
 import LandingPage from './components/pages/LandingPage'
 import HomePage from './components/pages/HomePage';
 import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 import SecureScan from './components/authentication/SecureScan';
-import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';//should provide an extremely finished look & feel
-import PrimarySearchAppBar from '@material-ui/core/AppBar'
 
 const App=()=>{
   // const {dispatch}=useContext();//(store) should fill this spot
@@ -25,7 +23,7 @@ const App=()=>{
   return(
     <Router>
       <div className='App'>
-        <PrimarySearchAppBar/>        
+        <NavBar/>        
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/login' component={Login}/>
         <Route exact path='/hompage' component={HomePage}/>
