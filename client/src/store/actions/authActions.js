@@ -29,7 +29,7 @@ export const loginUser=(userData,history)=>dispatch=>{
 
     axios.post('api/auth/login',userData).then(res=>{
         const {token}=res.data;
-    })
+    
 
     localStorage.setItem('jwtToken',token);
     setAuthToken(Token);
@@ -37,5 +37,11 @@ export const loginUser=(userData,history)=>dispatch=>{
     const decoded=jwt_decode(token);
     dispatch(setCurrentUser(decoded));
     history.push('/');
-    
+})
 }
+export const logoutUser=history=>dispatch=>{
+    localStorage.removeItem('jwtToken');
+    setAuthToken(false);
+    dispatch(setCurrentUser({}));
+    history.push('/login');
+};//chaining ()=>'s
