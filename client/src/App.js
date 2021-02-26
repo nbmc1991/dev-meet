@@ -1,6 +1,6 @@
 import React,{useContext,useEffect} from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import jwt_decode from ''
+import jwt_decode from 'jwt-decode';
 // import {Store} from './store';
 import Navbar from './components/partials/NavBar';
 import LandingPage from './components/pages/LandingPage'
