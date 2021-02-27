@@ -1,5 +1,5 @@
 import React,{useContext,useEffect} from 'react';
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import {Store} from './store';
 import {setCurrentUser,logoutUser} from './'
@@ -23,9 +23,9 @@ const App=()=>{
   },[dispatch]);
 
   return(
-    <BrowserRouter forceRefresh={true}>
+    <BrowserRouter>
       <Container maxWidth='sm'>
-        <Header className='textCentering'/>{/**tentative */}
+        <Header className='textCentering'/>
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/register' component={Register}/>
         <Route exact path='/login' component={Login}/>
