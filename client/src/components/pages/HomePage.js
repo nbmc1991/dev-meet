@@ -3,6 +3,9 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
+import {Store} from '../../store';
+import {logoutUser} from '../../store/actions/authActions'
+import API from '../../utils/apiHelper';
 //will need to import browser/user data
 //will import components for conditional rendering
 //will import from internal API
@@ -21,11 +24,10 @@ const HomePage=props=>{
         .catch(err=>console.log({err}))
     },[state,props]);
 
-    const onLogoutClick=ux=>{
-        ux.preventDefault();
+    const onLogoutClick=e=>{
+        e.preventDefault();
         logoutUser(props.history)(dispatch);
     };
-
     return(
     //     <div className="container valign-wrapper" style={{ height: '75vh' }}>
     //   <div className="row">

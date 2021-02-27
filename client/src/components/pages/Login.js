@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useContext, Typography } from 'react';
 import { Link } from 'react-dom';
-// import {Store} from '../../store';
-// import {loginUser,setErrors} from '../../store/actions/authActions';
+import {Store} from '../../store';
+import {loginUser,setErrors} from '../../store/actions/authActions';
 import classnames from 'classnames';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
@@ -16,13 +16,14 @@ const errors=state.error;
 const emailRef=useRef();
 const passwordRef=useRef();
 
-useEffect(()=>{
+//should this be 'e'
+useEffect(props=>{
     if(state.auth.isAuthenticated)
         props.history.push('/homepage')
 },[state,props]);
 
-const onSubmit=ux=>{
-    ux.preventDefault()
+const onSubmit=e=>{
+    e.preventDefault()
     dispatch(setErrors({response:{data:{}}}));
     const userData={
         email:emailRef.current.value,
@@ -49,18 +50,19 @@ const onSubmit=ux=>{
 // export default function Login() {
 //     const classes = useStyles();
 
-//     return (
-//         <form noValidate autoComplete="off">
-//             <Grid
-//                 container
-//                 direction="column"
-//                 justify="center"
-//                 alignItems="center"
-//             >
-//                 <Grid item xs={6}>
-//                     <Paper>why is this proving so difficult</Paper>
-//                 </Grid>
-//             </Grid>
-//         </form>
-//     );
-// }
+    return (
+        <form noValidate autoComplete="off">
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item xs={6}>
+                    <Paper>why is this proving so difficult</Paper>
+                </Grid>
+            </Grid>
+        </form>
+    );
+}
+export default Login;
