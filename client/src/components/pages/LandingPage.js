@@ -59,7 +59,7 @@ const LandingPage=props=>{
                         }}>
                         Login
                         </Link> */}
-                        <Link to='/login' variant='outline'>Login</Link>{/**model after app stack for routing off of button */}
+                        <Button style={{fontSize:19}}variant='filled'color='secondar'>Login</Button>{/**model after app stack for routing off of button */}
                     </div>
                 </div>
             </div>
