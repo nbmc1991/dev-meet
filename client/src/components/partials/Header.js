@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 //api calls to material-ui library
 
-const NavBar=props=>{
+const Header=props=>{
     return(
         <div className="navbar-fixed">
       <nav className="z-depth-0">
@@ -15,4 +15,4 @@ const NavBar=props=>{
     </div>
     )
 }
-export default NavBar;
+export default Header;
