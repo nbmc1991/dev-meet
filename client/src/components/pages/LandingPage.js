@@ -23,8 +23,8 @@ import 'fontsource-roboto';
 // };
 
 const LandingPage=props=>{
-    // const {state}=useContext()//(store) was temporarily removed from the useContext()
-    // console.log({state,props});
+    const {state}=useContext()//(store) was temporarily removed from the useContext()
+    console.log({state,props});
 
     return(
         <div className='container valign-wrapper' style={{height:'75vh'}}>

@@ -10,27 +10,26 @@ import TextField from '@material-ui/core/TextField';//imported for form field ux
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid';
 
+const Login=props=>{
+const {state,dispatch}=useContext(Store);
+const errors=state.error;
+const emailRef=useRef();
+const passwordRef=useRef();
 
-// const Login=props=>{
-// const {state,dispatch}=useContext(Store);
-// const errors=state.error;
-// const emailRef=useRef();
-// const passwordRef=useRef();
+useEffect(()=>{
+    if(state.auth.isAuthenticated)
+        props.history.push('/homepage')
+},[state,props]);
 
-// useEffect(()=>{
-//     if(state.auth.isAuthenticated)
-//         props.history.push('/homepage')
-// },[state,props]);
-
-// const onSubmit=ux=>{
-//     ux.preventDefault()
-//     dispatch(setErrors({response:{data:{}}}));
-//     const userData={
-//         email:emailRef.current.value,
-//         password:passwordRef.current.value,
-//     };
-//     loginUser(userData,props.history)(dispatch);
-// }
+const onSubmit=ux=>{
+    ux.preventDefault()
+    dispatch(setErrors({response:{data:{}}}));
+    const userData={
+        email:emailRef.current.value,
+        password:passwordRef.current.value,
+    };
+    loginUser(userData,props.history)(dispatch);
+}
 //     return(
 //         <Container>
 //              <TextField/>
@@ -47,21 +46,21 @@ import Grid from '@material-ui/core/Grid';
 //     },
 // }));Lo
 
-export default function Login() {
-    // const classes = useStyles();
+// export default function Login() {
+//     const classes = useStyles();
 
-    return (
-        <form noValidate autoComplete="off">
-            <Grid
-                container
-                direction="column"
-                justify="center"
-                alignItems="center"
-            >
-                <Grid item xs={6}>
-                    <Paper>why is this proving so difficult</Paper>
-                </Grid>
-            </Grid>
-        </form>
-    );
-}
+//     return (
+//         <form noValidate autoComplete="off">
+//             <Grid
+//                 container
+//                 direction="column"
+//                 justify="center"
+//                 alignItems="center"
+//             >
+//                 <Grid item xs={6}>
+//                     <Paper>why is this proving so difficult</Paper>
+//                 </Grid>
+//             </Grid>
+//         </form>
+//     );
+// }
