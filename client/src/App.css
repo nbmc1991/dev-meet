@@ -1,19 +1,19 @@
-.App {
+.textCentering {
   text-align: center;
-}
+}/*this class is a tool that can be used through out entire app*/
 
-.App-logo {
+.DevMeet.logo {
   height: 40vmin;
-  pointer-events: none;
+  pointer-events: visiblePainted;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .DevMeet.logo {
+    animation: DevMeet-logo-comeUpWithSomethingCool infinite 20s linear;
   }
 }
 
-.App-header {
+.DevMeet-NavBar {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,13 +22,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  opacity: an undisclosed amount;
 }
 
 .App-link {
   color: #61dafb;
-}
+}/*what purpose if any?*/ 
 
-@keyframes App-logo-spin {
+@keyframes DevMeet-logo-spin {
   from {
     transform: rotate(0deg);
   }
