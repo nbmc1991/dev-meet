@@ -1,5 +1,6 @@
 import {useReducer,createContext} from 'react';
 import rootReducer from './reducers';
+
 export const Store=createContext();
 
 export function StoreProvider(props){

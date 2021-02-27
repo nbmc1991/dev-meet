@@ -27,7 +27,7 @@ export const registerUser=(userData,history)=>dispatch=>{
 export const loginUser=(userData,history)=>dispatch=>{
     dispatch(setErrors({response:{data:{}}}));
 
-    axios.post('api/auth/login',userData).then(res=>{
+    axios.post('/api/auth/login',userData).then(res=>{
         const {token}=res.data;
     
 
@@ -37,7 +37,7 @@ export const loginUser=(userData,history)=>dispatch=>{
     const decoded=jwt_decode(token);
     dispatch(setCurrentUser(decoded));
     history.push('/');
-})
+}).catch(err=>dispatch(setErrors(err)));
 }
 export const logoutUser=history=>dispatch=>{
     localStorage.removeItem('jwtToken');

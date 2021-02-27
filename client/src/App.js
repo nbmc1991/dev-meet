@@ -2,7 +2,7 @@ import React,{useContext,useEffect} from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import {Store} from './store';
-import {setCurrentUser,logoutUser} from './'
+import {setCurrentUser,logoutUser} from './store/actions/authActions'
 import Header from './components/partials/Header';
 import LandingPage from './components/pages/LandingPage'
 import HomePage from './components/pages/HomePage';
@@ -10,6 +10,7 @@ import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 import SecureScan from './components/fireWall/SecureScan';
 import {Container} from '@material-ui/core';
+import setAuthToken from './utils/setAuthToken';
 
 const App=()=>{
   const {dispatch}=useContext(Store);
@@ -19,20 +20,29 @@ const App=()=>{
       const token=localStorage.jwtToken;
       const decoded=jwt_decode(token);
       const currentTime=Date.now()/1000;
+
+      setAuthToken(token);
+      dispatch(setCurrentUser(decoded));
+
+      if(decoded.exp<currentTime){
+        dispatch(logoutUser());
+        window.location.href='./login';
+      }
     }
   },[dispatch]);
 
   return(
     <BrowserRouter>
+      <Header className='textCentering'/>
       <Container maxWidth='sm'>
-        <Header className='textCentering'/>
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/register' component={Register}/>
         <Route exact path='/login' component={Login}/>
         <Switch>
           <SecureScan exact path='/hompage' component={HomePage}/>
         </Switch>
-      </Container>      
+      </Container>
+      {/**footer goes here */}    
     </BrowserRouter>
   );
 }
