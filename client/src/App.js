@@ -35,7 +35,9 @@ const App=()=>{
     <BrowserRouter>
       <Header className='textCentering'/>
       <Container maxWidth='sm'>
-        <Route exact path='/' component={LandingPage}/>
+        <Grid>{/**make exponential use of this ability! */}
+          <Route exact path='/' component={LandingPage}/>
+        </Grid>
         <Route exact path='/register' component={Register}/>
         <Route exact path='/login' component={Login}/>
         <Switch>
