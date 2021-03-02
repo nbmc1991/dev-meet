@@ -2,10 +2,13 @@
   text-align: center;
 }/*this class is a tool that can be used through out entire app*/
 
-{/**/}
+body{
+  background-image: url('../public/assets/faces.webp');
+}
 
-.DevMeet.logo {
-  height: 40vmin;
+
+.particle {
+  height: 5vmin;
   pointer-events: visiblePainted;
 }
 

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {StoreProvider} from './store';
+// import logo from './logo.svg'
 
 ReactDOM.render(
   <StoreProvider>
