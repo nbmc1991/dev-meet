@@ -34,15 +34,19 @@ const App=()=>{
   },[dispatch]);
 
   return(
-    <BrowserRouter>
-      <HeaderLP/>
-      <Route exact path='/' component={LandingPage}/>        
-      <Route exact path='/register' component={Register}/>
-      <Route exact path='/login' component={Login}/>
-      <Switch>
-        <SecureScan exact path='/hompage' component={HomePage}/>
-      </Switch>    
-    </BrowserRouter>
+    <div style={{height:'100vh'}}>      
+        <BrowserRouter>
+          <HeaderLP/>
+
+          <Route exact path='/' component={LandingPage}/>        
+      
+          <Route exact path='/register' component={Register}/>
+          <Route exact path='/login' component={Login}/>
+          <Switch>
+            <SecureScan exact path='/hompage' component={HomePage}/>
+          </Switch>    
+        </BrowserRouter>
+    </div>
   );
 }
 export default App;

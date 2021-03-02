@@ -2,10 +2,22 @@
   text-align: center;
 }/*this class is a tool that can be used through out entire app*/
 
-body{
-  background-image: url('../public/assets/faces.webp');
+
+.opacityStyle{
+  background-image: url("https://thebenefitsguide.com/content/uploads/2017/10/groupofbusinesspeoplefac_497422.jpg");
+  height: 100%;
+  position: relative;
 }
 
+.opacityStyle:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+}
 
 .particle {
   height: 5vmin;
