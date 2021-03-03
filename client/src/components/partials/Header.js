@@ -12,7 +12,7 @@ const Header=props=>{
         <div className="header">
           <IconButton>
           <PersonIcon fontSize="large" className="header__icon"/>
-          <img className="header__logo" src="https://www.bestdesigns.co/uploads/inspirations/2354/crop_683_410__1513706350_604_tin.png" alt="logo"/>      
+          <img className="header__logo" src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-korean-love-symbol-png-image_5147489.jpg" alt="logo"/>      
           <ForumIcon fontSize="large" className="header__icon"/>
      
       </IconButton>
