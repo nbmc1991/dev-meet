@@ -11,7 +11,12 @@ import Login from './components/pages/Login';
 import SecureScan from './components/fireWall/SecureScan';
 import {Container,Grid} from '@material-ui/core';
 import setAuthToken from './utils/setAuthToken';
+<<<<<<< HEAD
 // import logo from './logo.svg'
+=======
+// import TinderCards from 'react-tinder-card';
+// import TinderCards from './components/pages/TinderCards';
+>>>>>>> 8d6e9e81877ceef97d831f0780be2adae3aef4a8
 
 // 
 const App=()=>{
@@ -35,6 +40,7 @@ const App=()=>{
 
   return(
     <BrowserRouter>
+<<<<<<< HEAD
       <HeaderLP/>
       <Route exact path='/' component={LandingPage}/>        
       <Route exact path='/register' component={Register}/>
@@ -42,6 +48,19 @@ const App=()=>{
       <Switch>
         <SecureScan exact path='/hompage' component={HomePage}/>
       </Switch>    
+=======
+      <Header className='textCentering'/>
+      <Container maxWidth='lg'>
+        <Switch>
+        <Route exact path='/' component={LandingPage}/>
+        <Route exact path='/register' component={Register}/>
+        <Route exact path='/login' component={Login}/>
+          <SecureScan exact path='/homepage' component={HomePage}/>
+
+        </Switch>
+      </Container>
+      {/**footer goes here */}    
+>>>>>>> 8d6e9e81877ceef97d831f0780be2adae3aef4a8
     </BrowserRouter>
   );
 }

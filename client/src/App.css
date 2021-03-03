@@ -18,7 +18,7 @@ body{
   }
 }
 
-.DevMeet-NavBar {
+/* .DevMeet-NavBar {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -28,7 +28,7 @@ body{
   font-size: calc(10px + 2vmin);
   color: white;
   opacity: an undisclosed amount;
-}
+} */
 
 .App-link {
   color: #61dafb;

@@ -7,6 +7,10 @@ const userSchema = new Schema({
         trim: true,
      required:"Username is Required"
     },
+    language: {
+        type: String,
+        trim: true,
+    },
     password: {
         type: String,
         trim: true,
