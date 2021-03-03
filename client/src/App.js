@@ -11,6 +11,8 @@ import Login from './components/pages/Login';
 import SecureScan from './components/fireWall/SecureScan';
 import {Container} from '@material-ui/core';
 import setAuthToken from './utils/setAuthToken';
+// import TinderCards from 'react-tinder-card';
+// import TinderCards from './components/pages/TinderCards';
 
 const App=()=>{
   const {dispatch}=useContext(Store);
@@ -34,12 +36,13 @@ const App=()=>{
   return(
     <BrowserRouter>
       <Header className='textCentering'/>
-      <Container maxWidth='sm'>
+      <Container maxWidth='lg'>
+        <Switch>
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/register' component={Register}/>
         <Route exact path='/login' component={Login}/>
-        <Switch>
           <SecureScan exact path='/homepage' component={HomePage}/>
+
         </Switch>
       </Container>
       {/**footer goes here */}    

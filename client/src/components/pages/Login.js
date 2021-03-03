@@ -87,7 +87,6 @@ const Login = props => {
         <div className="row" >
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">Back to home</i> 
             </Link>
             <div className="col s12" style={{ paddingLeft: '11.250px' }}>
             <Avatar className={classes.avatar}>
@@ -97,7 +96,7 @@ const Login = props => {
                 <b>Login</b> below
               </h4>
               <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
+                Don't have an account? <Link href="/register">Register</Link>
               </p>
             </div>
             <form noValidate onSubmit={onSubmit}>
