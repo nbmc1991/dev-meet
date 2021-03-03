@@ -40,15 +40,6 @@ const App=()=>{
 
   return(
     <BrowserRouter>
-<<<<<<< HEAD
-      <HeaderLP/>
-      <Route exact path='/' component={LandingPage}/>        
-      <Route exact path='/register' component={Register}/>
-      <Route exact path='/login' component={Login}/>
-      <Switch>
-        <SecureScan exact path='/hompage' component={HomePage}/>
-      </Switch>    
-=======
       <Header className='textCentering'/>
       <Container maxWidth='lg'>
         <Switch>
@@ -60,7 +51,6 @@ const App=()=>{
         </Switch>
       </Container>
       {/**footer goes here */}    
->>>>>>> 8d6e9e81877ceef97d831f0780be2adae3aef4a8
     </BrowserRouter>
   );
 }
