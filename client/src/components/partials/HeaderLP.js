@@ -12,6 +12,7 @@ const HeaderLP=RNA=>{
     <header className='particle'>
       <Grid container>
         <img src={logo} alt='Site logo' width='50px'height='50px'/>
+        <Button varient='contained' color='primary' style={{marginLeft:'auto'}}>clickBait</Button>
       </Grid>
     </header> 
   // const useStyles=makeStyles((theme)=>({
