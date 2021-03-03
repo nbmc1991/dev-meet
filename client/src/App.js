@@ -39,7 +39,7 @@ const App=()=>{
         <Route exact path='/register' component={Register}/>
         <Route exact path='/login' component={Login}/>
         <Switch>
-          <SecureScan exact path='/hompage' component={HomePage}/>
+          <SecureScan exact path='/homepage' component={HomePage}/>
         </Switch>
       </Container>
       {/**footer goes here */}    

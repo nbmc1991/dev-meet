@@ -1,3 +1,4 @@
+import{ useEffect, useRef, useContext } from 'react';
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -12,6 +13,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Store } from '../../store';
+import { loginUser, setErrors } from '../../store/actions/authActions';
+import classnames from 'classnames';
 
 function Copyright() {
   return (
@@ -44,78 +48,98 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-  root: {
-      color: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  }
+//   body: {
+//       color: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+//   }
  
 }));
 
-export default function Login() {
-  const classes = useStyles();
+const Login = props => {
+    const { state, dispatch } = useContext(Store);
+    const errors = state.error;
+    const emailRef = useRef();
+    const passwordRef = useRef();
+  
+    useEffect(() => {
+      if (state.auth.isAuthenticated)
+        props.history.push('/homepage');
+    }, [ state, props ]);
+  
+    const onSubmit = e => {
+      e.preventDefault();
+  
+      dispatch(setErrors({ response: { data: {} } }));
+  
+      const userData = {
+        email: emailRef.current.value,
+        password: passwordRef.current.value,
+      };
+  
+      loginUser(userData, props.history)(dispatch);
+    };
+    const classes = useStyles();
 
-  return (
-    <Container component="main" maxWidth="xs" >
-      <CssBaseline />
+  
+    return (
+        <Container component="main" maxWidth="xs" >
+    <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        <div className="row" >
+          <div className="col s8 offset-s2">
+            <Link to="/" className="btn-flat waves-effect">
+              <i className="material-icons left">Back to home</i> 
+            </Link>
+            <div className="col s12" style={{ paddingLeft: '11.250px' }}>
+            <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="/register" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
+              <h4>
+                <b>Login</b> below
+              </h4>
+              <p className="grey-text text-darken-1">
+                Don't have an account? <Link to="/register">Register</Link>
+              </p>
+            </div>
+            <form noValidate onSubmit={onSubmit}>
+              <div className="input-field col s12">
+                <input ref={emailRef} error={errors.incorrect} name="email" type="email"
+                       className={classnames('', { invalid: errors.incorrect })} />
+  
+                <label htmlFor="email">Email</label>
+  
+                <span className="red-text">{errors.incorrect}</span>
+              </div>
+  
+              <div className="input-field col s12">
+                <input ref={passwordRef} error={errors.incorrect} name="password" type="password"
+                       className={classnames('', { invalid: errors.incorrect })} />
+                <label htmlFor="password">Password</label>
+              </div>
+  
+              <div className="col s12">
+                <span className="red-text">{errors.message}</span>
+              </div>
+  
+              <div className="col s12" style={{ paddingLeft: '11.250px' }}>
+                <button
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  style={{
+                    width: '150px',
+                    borderRadius: '3px',
+                    letterSpacing: '1.5px',
+                    marginTop: '1rem',
+                  }}
+                  type="submit">
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
-    </Container>
-  );
-}
+      </Container>
+    );
+  };
+  
+  export default Login;
+  
