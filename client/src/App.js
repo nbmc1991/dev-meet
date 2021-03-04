@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode';
 import {Store} from './store';
 import {setCurrentUser,logoutUser} from './store/actions/authActions'
 import Header from './components/partials/Header';
+import AppLogo from './components/partials/AppLogo'
 import LandingPage from './components/pages/LandingPage'
 import HomePage from './components/pages/HomePage';
 import Register from './components/pages/Register';
@@ -42,14 +43,13 @@ const App=()=>{
         <Route exact path='/register' component={Register}/>
         <Route exact path='/login' component={Login}/>
           <SecureScan exact path='/homepage' component={HomePage}/>
-
         </Switch>
       </Container>
-      {/**footer goes here */}    
+          
     </BrowserRouter>
   );
 }
 export default App;
 
 {/**path='/:userProfile|the homepage is to have user specific data rendered upon successful SecureScan */}
-          {/**consider the kind of page user is to land on after logging in or signing up for account */}
+{/**consider the kind of page user is to land on after logging in or signing up for account */}

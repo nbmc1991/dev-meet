@@ -2,11 +2,12 @@
   text-align: center;
 }/*this class is a tool that can be used through out entire app*/
 
-{/**/}
-
-.DevMeet.logo {
-  height: 40vmin;
+.DevMeet {
+  /* height: 40vmin; */
   pointer-events: visiblePainted;
+  display:flex;
+  justify-content:flex-end;
+  align-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {

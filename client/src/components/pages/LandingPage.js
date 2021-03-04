@@ -7,8 +7,8 @@ import 'fontsource-roboto';
 // import FavoriteIcon from '@material-ui/icons/Favorite'
 
 const LandingPage=props=>{
-    const {state}=useContext(Store)//(store) was temporarily removed from the useContext()
-    console.log({state,props});
+    const {state}=useContext(Store)
+    // console.log({state,props});
 
     return(
         // <div className='container valign-wrapper' style={{height:'75vh'}}>
